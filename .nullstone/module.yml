@@ -6,7 +6,7 @@ category: cluster
 subcategory: ""
 provider_types:
     - aws
-platform: ecs
+platform: batch
 subplatform: fargate
 type: ""
 appCategories: []

@@ -2,8 +2,8 @@ resource "aws_batch_compute_environment" "this" {
   compute_environment_name = local.resource_name
 
   compute_resources {
-    max_vcpus           = var.max_vcpus
-    min_vcpus           = 0
+    max_vcpus = var.max_vcpus
+    min_vcpus = 0
 
     security_group_ids = [aws_security_group.this.id]
 
@@ -41,7 +41,10 @@ data "aws_iam_policy_document" "batch_assume_role" {
 }
 
 resource "aws_security_group" "this" {
-  name = "aws_batch_compute_environment_security_group"
+  name        = local.resource_name
+  vpc_id      = local.vpc_id
+  tags        = merge(local.tags, { Name = local.resource_name })
+  description = "Managed by Terraform"
 
   egress {
     from_port   = 0

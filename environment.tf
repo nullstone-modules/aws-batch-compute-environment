@@ -4,7 +4,6 @@ resource "aws_batch_compute_environment" "this" {
   compute_resources {
     max_vcpus           = var.max_vcpus
     min_vcpus           = 0
-    allocation_strategy = var.allocation_strategy
 
     security_group_ids = [aws_security_group.this.id]
 

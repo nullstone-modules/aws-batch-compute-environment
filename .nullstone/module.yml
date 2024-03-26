@@ -1,0 +1,13 @@
+org_name: nullstone
+name: aws-batch-compute-environment
+friendly_name: Compute Environment for AWS Batch
+description: Produce an AWS batch compute environment for batch jobs to be run in
+category: cluster
+subcategory: ""
+provider_types:
+    - aws
+platform: batch
+subplatform: fargate
+type: ""
+appCategories: []
+is_public: true

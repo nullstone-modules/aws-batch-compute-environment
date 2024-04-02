@@ -18,7 +18,7 @@ resource "aws_batch_compute_environment" "this" {
 }
 
 resource "aws_iam_role" "aws_batch_service_role" {
-  name               = "aws_batch_service_role"
+  name               = local.resource_name
   assume_role_policy = data.aws_iam_policy_document.batch_assume_role.json
 }
 
